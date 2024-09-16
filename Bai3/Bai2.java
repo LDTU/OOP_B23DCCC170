@@ -1,10 +1,20 @@
+class Common {
+    public static boolean check(int value) {
+        return value > 0;
+    }
+}
+
 class Rectangle {
     int width;
     int height;
 
     public Rectangle(int width, int height) {
-        this.width = width;
-        this.height = height;
+        if (Common.check(width) && Common.check(height)) {
+            this.width = width;
+            this.height = height;
+        } else {
+            System.out.println("Vui long nhap so nguyen duong.");
+        }
     }
 
     public int getPerimeter() {
